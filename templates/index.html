@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prediction</title>
+
+</head>
+<h2 style="color: orange">Welcome to the Prediction part of online shopping company</h2>
+<p>the company wants to know how they do profit</p>
+<p>they gives you company data and say find the features which helps most for company profit</p>
+<p><strong>in this particular problem i used linear regression model for predicting the features</strong></p>
+
+
+<body>
+ <div class="login">
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	Avg. Session Length: <input type="number" step="any" name="Avg. Session Length" placeholder="session length" required="required" /><br>
+        Time on App: <input type="number" step="any" name="Time on App" placeholder="app time" required="required" /><br>
+		Time on Website: <input type="number" step="any" name="Time on Website" placeholder="website time" required="required" /><br>
+        Length of Membership: <input type="number" step="any" name="Length of Membership" placeholder="membership length" required="required" /><br>
+        <button style="color: red" type="submit" class="btn btn-primary btn-block btn-large">predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+     <h2 style="color: green;">you have successfully completed your prediction</h2>
+
+ </div>
+</body>
+
+</html>
